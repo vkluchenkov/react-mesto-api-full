@@ -10,6 +10,7 @@ class Api {
     return fetch(`${this._baseUrl}/signup`, {
       method: "POST",
       headers: this._headers,
+      credentials: 'include',
       body: JSON.stringify(singupPayload),
     }).then((res) => this._resHandler(res));
   }
@@ -18,6 +19,7 @@ class Api {
     return fetch(`${this._baseUrl}/signin`, {
       method: "POST",
       headers: this._headers,
+      credentials: 'include',
       body: JSON.stringify(signinPayload),
     }).then((res) => this._resHandler(res));
   }
@@ -26,6 +28,7 @@ class Api {
   getCards() {
     return fetch(`${this._baseUrl}/cards`, {
       headers: this._headers,
+      credentials: 'include',
     }).then((res) => this._resHandler(res));
   }
 
@@ -34,6 +37,7 @@ class Api {
     return fetch(`${this._baseUrl}/cards`, {
       method: "POST",
       headers: this._headers,
+      credentials: 'include',
       body: JSON.stringify(card),
     }).then((res) => this._resHandler(res));
   }
@@ -43,6 +47,7 @@ class Api {
     return fetch(`${this._baseUrl}/cards/${cardId}`, {
       method: "DELETE",
       headers: this._headers,
+      credentials: 'include',
     }).then((res) => this._resHandler(res));
   }
 
@@ -50,6 +55,7 @@ class Api {
   getMe() {
     return fetch(`${this._baseUrl}/users/me`, {
       headers: this._headers,
+      credentials: 'include',
     }).then((res) => this._resHandler(res));
   }
 
@@ -58,6 +64,7 @@ class Api {
     return fetch(`${this._baseUrl}/users/me`, {
       method: "PATCH",
       headers: this._headers,
+      credentials: 'include',
       body: JSON.stringify(me),
     }).then((res) => this._resHandler(res));
   }
@@ -67,6 +74,7 @@ class Api {
     return fetch(`${this._baseUrl}/users/me/avatar`, {
       method: "PATCH",
       headers: this._headers,
+      credentials: 'include',
       body: JSON.stringify({ avatar: avatarLink }),
     }).then((res) => this._resHandler(res));
   }
@@ -76,20 +84,12 @@ class Api {
     return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
       method: `${hasMyLike ? "DELETE" : "PUT"}`,
       headers: this._headers,
+      credentials: 'include',
     }).then((res) => this._resHandler(res));
   }
 }
 
 export const api = new Api({
   baseUrl: 'http://localhost:3000',
-  headers: {
-    "Content-Type": "application/json",
-  },
-});
-
-export const authApi = new Api({
-  baseUrl: 'http://localhost:3000',
-  headers: {
-    "Content-Type": "application/json",
-  },
+  headers: { "Content-Type": "application/json" },
 });

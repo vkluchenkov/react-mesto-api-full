@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
-import { api, authApi } from '../utils/Api';
+import { api } from '../utils/Api';
 import { ProtectedRoute } from './ProtectedRoute';
 import { Header } from './Header';
 import { Main } from './Main';
@@ -46,9 +46,7 @@ function App() {
 
   //// Returning user auth
   useEffect(() => {
-    const jwt = localStorage.getItem('jwt');
-    if (jwt) {
-      authApi
+      api
         .getMe()
         .then((res) => {
           setCurrentUser((prev) => {
@@ -56,7 +54,6 @@ function App() {
           });
         })
         .catch((error) => console.log(error));
-    }
   }, []);
 
   // Handlers
@@ -69,10 +66,10 @@ function App() {
   const handleSuccess = () => setSuccessPopupOpen(true);
 
   const handleRegistration = (signupPayload) =>
-    authApi.signup(signupPayload).then(handleSuccess).catch(handleError);
+    api.signup(signupPayload).then(handleSuccess).catch(handleError);
 
   const handleLogin = (loginPayload) =>
-    authApi
+    api
       .signin(loginPayload)
       .then((res) => {
         localStorage.setItem('jwt', res.token);
