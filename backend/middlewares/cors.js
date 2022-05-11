@@ -1,8 +1,9 @@
 const allowedCors = [
   'http://localhost:3001',
+  'https://mesto.bestpicture.pro',
 ];
 
-module.exports = ((req, res, next) => {
+module.exports = (req, res, next) => {
   const { method } = req;
   const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
   const requestHeaders = req.headers['access-control-request-headers'];
@@ -19,4 +20,4 @@ module.exports = ((req, res, next) => {
     return res.end();
   }
   next();
-});
+};
