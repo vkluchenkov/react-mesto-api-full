@@ -7,6 +7,7 @@ const { celebrate, Joi, errors } = require('celebrate');
 const { handleError } = require('./errors/handleError');
 const { login, createUser } = require('./controllers/users');
 const auth = require('./middlewares/auth');
+const cors = require('./middlewares/cors');
 const NotFoundError = require('./errors/NotFoundError');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 require('dotenv').config();
@@ -23,6 +24,7 @@ app.use(cookieParser());
 mongoose.connect(DB);
 
 app.use(requestLogger);
+app.use(cors);
 
 app.post(
   '/signin',

@@ -81,17 +81,15 @@ class Api {
 }
 
 export const api = new Api({
-  baseUrl: "https://mesto.nomoreparties.co/v1/cohort-35",
+  baseUrl: 'http://localhost:3000',
   headers: {
-    authorization: "1ce0766d-1d99-41e8-b2c1-6a564053af66",
     "Content-Type": "application/json",
   },
 });
 
 export const authApi = new Api({
-  baseUrl: "https://auth.nomoreparties.co",
+  baseUrl: 'http://localhost:3000',
   headers: {
     "Content-Type": "application/json",
-    authorization: `Bearer ${localStorage.getItem("jwt")}`,
   },
 });
