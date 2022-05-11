@@ -1,0 +1,27 @@
+.title__button {
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  background-image: url(../../../images/button_plus.svg);
+  background-size: 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid white;
+  border-radius: 2px;
+  color: white;
+  cursor: pointer;
+  transition: opacity .3s;
+  opacity: 1;
+  box-sizing: border-box;
+}
+
+.title__button:hover {
+  opacity: .6;
+}
+
+@media screen and (min-width: 768px) {
+  .title__button {
+    background-size: 22px;
+    width: 150px;
+  }
+}

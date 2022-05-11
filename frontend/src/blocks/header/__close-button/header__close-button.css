@@ -1,0 +1,22 @@
+.header__close-button {
+  display: block;
+  border: none;
+  background: url(../../../images/close_button.svg) center no-repeat;
+  background-size: 100%;
+  margin: 0 27px 0 0;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.header__close-button:hover {
+  opacity: 0.6;
+}
+
+@media screen and (min-width: 768px) {
+  .header__close-button {
+    display: none;
+  }
+}

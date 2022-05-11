@@ -1,0 +1,11 @@
+.authform__hint-link {
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.authform__hint-link:hover {
+  color: white;
+  text-decoration: none;
+  opacity: 0.6;
+}

@@ -1,0 +1,27 @@
+.title__image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 120px;
+  background-color: black;
+  opacity: 0;
+  transition: opacity 0.3s;
+  cursor: pointer;
+}
+
+.title__image-overlay:hover {
+  opacity: 0.8;
+}
+
+.title__image-overlay::before {
+  content: "";
+  background: url(../../../images/avatar_edit.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 120px;
+}

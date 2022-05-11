@@ -1,0 +1,9 @@
+.title__titles {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .title__titles {
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,6 @@
+.popup__image {
+  width: 100%;
+  position: relative;
+  max-height: 75vh;
+  max-width: 75vw;
+}

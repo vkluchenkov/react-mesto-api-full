@@ -1,0 +1,15 @@
+.title__name-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  transform: translateX(13px);
+}
+
+@media screen and (min-width: 768px) {
+  .title__name-wrapper {
+    gap: 20px;
+    justify-content: start;
+    transform: none;
+  }
+}

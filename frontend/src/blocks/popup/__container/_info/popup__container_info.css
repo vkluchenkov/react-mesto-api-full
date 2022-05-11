@@ -1,0 +1,9 @@
+.popup__container_info {
+  padding: 50px 18px 50px;
+}
+
+@media screen and (min-width: 768px) {
+  .popup__container_info {
+    padding: 60px 36px 60px;
+  }
+}

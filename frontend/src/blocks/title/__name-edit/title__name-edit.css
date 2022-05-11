@@ -1,0 +1,25 @@
+.title__name-edit {
+  border: 0;
+  display: block;
+  margin: 0 0 0 10px;
+  background: url(../../../images/edit_button.svg);
+  background-size: 100%;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  transition: opacity 0.3s;
+  opacity: 1;
+  flex-shrink: 0;
+}
+
+.title__name-edit:hover {
+  opacity: 0.6;
+}
+
+@media screen and (min-width: 768px) {
+  .title__name-edit {
+    width: 24px;
+    height: 24px;
+    margin: 0;
+  }
+}

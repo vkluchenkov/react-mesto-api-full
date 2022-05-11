@@ -1,0 +1,6 @@
+.place__info {
+  padding: 22px 20px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}

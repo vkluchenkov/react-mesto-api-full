@@ -1,0 +1,15 @@
+.title {
+  padding-bottom: 18px;
+  color: white;
+}
+
+@media screen and (min-width: 768px) {
+  .title {
+    max-width: 880px;
+    padding-bottom: 33px;
+    display: grid;
+    grid-template-columns: 120px 1fr 150px;
+    gap: 30px;
+    align-items: center;
+  }
+}

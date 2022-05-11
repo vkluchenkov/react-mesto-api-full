@@ -1,0 +1,8 @@
+.place__like_active {
+  background: url(../../../../images/heart_filled.svg) center no-repeat;
+  opacity: 1;
+}
+
+.place__like_active:hover {
+  opacity: 1;
+}
