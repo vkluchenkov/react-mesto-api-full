@@ -24,6 +24,13 @@ class Api {
     }).then((res) => this._resHandler(res));
   }
 
+  logout() {
+    return fetch(`${this._baseUrl}/logout`, {
+      headers: this._headers,
+      credentials: 'include',
+    }).then((res) => this._resHandler(res));
+  }
+
   // Returns array of cards
   getCards() {
     return fetch(`${this._baseUrl}/cards`, {
@@ -58,7 +65,7 @@ class Api {
       credentials: 'include',
     }).then((res) => this._resHandler(res));
   }
-
+  
   // Takes name and about. Returns user
   patchMe(me) {
     return fetch(`${this._baseUrl}/users/me`, {

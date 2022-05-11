@@ -1,6 +1,7 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
+require('dotenv').config();
 const NotFoundError = require('../errors/NotFoundError');
 const UnauthorizedError = require('../errors/UnauthorizedError');
 const ConflictError = require('../errors/ConflictError');
@@ -39,6 +40,18 @@ module.exports.getMe = async (req, res, next) => {
   try {
     const user = await User.findById(req.user._id);
     if (user) res.send(modelToDto(user));
+  } catch (err) {
+    next(err);
+  }
+};
+
+module.exports.logout = async (req, res, next) => {
+  try {
+    const user = await User.findById(req.user._id);
+    if (user) {
+      res.clearCookie('jwt');
+      res.send({ message: 'Совершен выход' });
+    }
   } catch (err) {
     next(err);
   }
